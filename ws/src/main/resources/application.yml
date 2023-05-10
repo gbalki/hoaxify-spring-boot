@@ -13,8 +13,23 @@ spring:
   profiles:
     active:
     - dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+---
+spring:
+  profiles: production
 hoaxify:
-  upload-path: picture-storage
+  upload-path: storage-production
 ---
 spring:
   profiles: dev
+  datasource:
+    url: jdbc:h2:./devdb
+    username: sa
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+hoaxify:
+  upload-path: storage-dev
