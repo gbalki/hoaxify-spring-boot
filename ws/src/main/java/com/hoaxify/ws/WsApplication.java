@@ -29,7 +29,7 @@ public class WsApplication {
 					User user = new User();
 					user.setUsername("user"+i);
 					user.setDisplayName("display"+i);
-					user.setPassword("P4ssword");
+					user.setPassword("password");
 					userService.save(user);
 					for(int j = 1;j<=20;j++) {
 						HoaxSubmitVM hoax = new HoaxSubmitVM();

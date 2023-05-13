@@ -1,21 +1,18 @@
 package com.hoaxify.ws.file;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import com.hoaxify.ws.hoax.Hoax;
-
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name="fileAttachments")
+@Entity
 public class FileAttachment {
 
 	@Id
@@ -24,6 +21,9 @@ public class FileAttachment {
 	
 	private String name;
 	
+	private String fileType;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	
 	@OneToOne
